@@ -1,0 +1,17 @@
+{
+  "method": "built-in image_gen",
+  "assets": [
+    {
+      "path": "public/paving-after.webp",
+      "source": "exec-1580ab20-fb69-4567-bf4c-16b45b012c51.png",
+      "purpose": "Illustrative hero and after-paving visualization; not an RCB project photo",
+      "prompt": "Photorealistic architectural inspiration photograph for the RCB Holdings website hero. Tropical Sri Lankan modern home entrance, palms, warm concrete walls, dark gate, afternoon light. Broad foreground of red and charcoal interlock paving, shadowed foliage at left for readable overlay. No text, people, cars or branding. Match approved concept B."
+    },
+    {
+      "path": "public/paving-before.webp",
+      "source": "exec-c4dcf28e-878f-40b8-a9c9-982ab65a4cf3.png",
+      "purpose": "Illustrative before-paving state",
+      "prompt": "Edit the after image only to replace paving with compacted sandy gray-brown earth and gravel. Preserve camera, house, plants, gate, sky and lighting for a matched comparison. No new objects or text."
+    }
+  ]
+}
