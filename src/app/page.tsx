@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowUpRight,
   ArrowDown,
@@ -97,9 +98,9 @@ export default function Home() {
               Wherever yours begins, find the paving, blocks and machinery to
               move it forward with RCB Holdings.
             </p>
-            <a className="text-link" href="#about">
+            <Link className="text-link" href="/about">
               Get to know RCB <ArrowUpRight size={18} />
-            </a>
+            </Link>
           </div>
           <div className="intro-products" data-reveal>
             <div className="intro-loader">
@@ -333,9 +334,14 @@ export default function Home() {
               Visit us in Hokandara. Tell us what you’re building. We’ll help
               you explore the products and equipment that fit.
             </p>
-            <a className="text-link" href="#contact">
-              Start a conversation <ArrowUpRight size={18} />
-            </a>
+            <div style={{ display: "flex", gap: "18px", flexWrap: "wrap", marginBottom: "20px" }}>
+              <Link className="text-link" href="/about">
+                Full company profile <ArrowUpRight size={18} />
+              </Link>
+              <a className="text-link" href="#contact">
+                Start a conversation <ArrowUpRight size={18} />
+              </a>
+            </div>
             <div className="vision">
               <span>Our vision</span>
               <blockquote>“To give the best product to customers.”</blockquote>

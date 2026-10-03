@@ -24,10 +24,10 @@ export function Footer() {
           <div className="footer-col">
             <h3>Explore Products</h3>
             <Link href="/products">All Machinery</Link>
-            <Link href="/products?category=block-making">
+            <Link href="/products?category=block-making-machinery">
               Block Making Machinery
             </Link>
-            <Link href="/products?category=construction">
+            <Link href="/products?category=construction-machinery">
               Construction Machinery
             </Link>
             <a href="/#paving">Interlock & paving</a>
@@ -36,8 +36,9 @@ export function Footer() {
           </div>
           <div className="footer-col">
             <h3>Get to know us</h3>
-            <a href="/#about">Our story</a>
-            <a href="/#achievements">Achievements</a>
+            <Link href="/about">About Us</Link>
+            <a href="/about#divisions">Core Divisions</a>
+            <a href="/about#achievements">Achievements</a>
             <a href="/#contact">Contact us</a>
             <a href={site.map} target="_blank" rel="noopener noreferrer">
               Find us <ArrowUpRight size={14} />

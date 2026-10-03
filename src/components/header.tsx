@@ -37,8 +37,8 @@ const links = [
   ["Products", "/products"],
   ["Interlock & paving", "/#paving"],
   ["Machinery", "/#machinery"],
+  ["About Us", "/about"],
   ["Gallery", "/#gallery"],
-  ["Our story", "/#about"],
 ];
 export function Header() {
   const [compact, setCompact] = useState(false);
@@ -149,12 +149,12 @@ export function Header() {
                 <nav aria-label="Mobile navigation">
                   {[
                     ["All Products", "/products"],
+                    ["About Us", "/about"],
                     ["Interlock & paving", "/#paving"],
                     ["Machinery", "/#machinery"],
                     ["Gallery", "/#gallery"],
-                    ["Our story", "/#about"],
                     ["Brick calculator", "/#calculator"],
-                    ["Achievements", "/#achievements"],
+                    ["Achievements", "/about#achievements"],
                     ["Contact us", "/#contact"],
                   ].map(([label, href]) => (
                     <SheetClose asChild key={href}>
