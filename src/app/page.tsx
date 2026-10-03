@@ -2,12 +2,10 @@ import Image from "next/image";
 import {
   ArrowUpRight,
   ArrowDown,
-  MoveRight,
   Blocks,
   Truck,
   Wrench,
   Layers,
-  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,14 +14,13 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { Separator } from "@/components/ui/separator";
 import { Header } from "@/components/header";
-import { Brand, Awards, Laurel } from "@/components/brand";
+import { Awards, Laurel } from "@/components/brand";
 import { ScrollMotion } from "@/components/motion";
 import { Calculator } from "@/components/calculator";
 import { Comparison } from "@/components/comparison";
 import { Gallery } from "@/components/gallery";
-import { Contact, SocialLinks } from "@/components/contact";
+import { Contact } from "@/components/contact";
 import { pavers } from "@/lib/calculator";
 import { site } from "@/lib/site";
 
@@ -428,64 +425,6 @@ export default function Home() {
         </section>
         <Contact />
       </main>
-      <footer className="site-footer">
-        <div className="footer-main">
-          <div className="footer-brand">
-            <Brand light />
-            <p>
-              Interlock paving. Construction machinery.
-              <br />
-              For the places you build.
-            </p>
-            <SocialLinks />
-          </div>
-          <div className="footer-col">
-            <h3>Explore</h3>
-            <a href="#paving">Interlock & paving</a>
-            <a href="#machinery">Machinery</a>
-            <a href="#calculator">Brick calculator</a>
-            <a href="#gallery">Gallery</a>
-          </div>
-          <div className="footer-col">
-            <h3>Get to know us</h3>
-            <a href="#about">Our story</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#contact">Contact us</a>
-            <a href={site.map} target="_blank" rel="noopener noreferrer">
-              Find us <ArrowUpRight size={14} />
-            </a>
-          </div>
-          <div className="footer-col footer-contact">
-            <h3>Let’s talk</h3>
-            <a href={site.phoneHref}>{site.phone}</a>
-            <a href="tel:+94112561959">{site.office}</a>
-            <a href={`mailto:${site.email}`}>{site.email}</a>
-            <p>
-              No. 516/2, Hokandara North,
-              <br />
-              Hokandara, Sri Lanka.
-            </p>
-          </div>
-        </div>
-        <Separator />
-        <div className="footer-bottom">
-          <p>
-            © {new Date().getFullYear()} RCB Holdings (Pvt) Ltd. All rights
-            reserved.
-          </p>
-          <a href="#">
-            Back to top <ArrowUpRight size={16} />
-          </a>
-        </div>
-        <div className="footer-wordmark" aria-hidden="true">
-          RCB HOLDINGS
-          <ArrowUpRight aria-hidden="true" />
-        </div>
-      </footer>
-      <a className="mobile-call" href={site.phoneHref}>
-        <Phone size={18} />
-        Talk to RCB <MoveRight size={18} />
-      </a>
     </>
   );
 }
