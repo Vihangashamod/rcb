@@ -206,7 +206,6 @@ section[id] {
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  transition: height 0.4s var(--ease);
 }
 .site-header.is-compact {
   box-shadow: 0 5px 24px #0026630a;
@@ -405,30 +404,112 @@ section[id] {
   gap: 30px;
 }
 .hero-awards {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 30px;
+  gap: 24px;
 }
-.award-lockup {
-  display: flex;
+.hero-awards-apple {
+  padding: 12px 24px;
+  background: rgba(0, 20, 56, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.4);
+}
+.apple-award-badge {
+  display: inline-flex;
   align-items: center;
-  gap: 13px;
-  font-size: 12px;
-  line-height: 1.7;
-  color: #fff;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 14px;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
 }
-.award-lockup > svg {
-  width: 47px;
-  height: 55px;
-  color: var(--gold);
+.apple-award-badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0);
+  transition: background-color 0.25s ease;
+  pointer-events: none;
 }
-.award-lockup strong {
+.apple-award-badge:hover {
+  transform: translateY(-2px);
+}
+.apple-award-badge:hover::before {
+  background: rgba(255, 255, 255, 0.08);
+}
+.apple-laurel-branch {
+  width: 40px;
+  height: 74px;
+  flex-shrink: 0;
+  color: #ffffff;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apple-laurel-right {
+  transform: scaleX(-1);
+}
+.apple-award-badge:hover .apple-laurel-left {
+  transform: translateX(-2px);
+}
+.apple-award-badge:hover .apple-laurel-right {
+  transform: scaleX(-1) translateX(-2px);
+}
+.apple-award-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  padding-inline: 4px;
+}
+.apple-award-emblem {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 5px;
+  color: #ffffff;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+.apple-award-org {
+  font-size: 11px;
   font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.25;
+  margin-bottom: 3px;
+  white-space: nowrap;
+}
+.apple-award-title {
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  line-height: 1.25;
+  white-space: nowrap;
 }
 .award-divider {
-  height: 41px;
+  height: 48px;
   width: 1px;
-  background: #ffffff3d;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.22) 20%, rgba(255, 255, 255, 0.22) 80%, transparent);
+}
+.apple-laurel-wreath-standalone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+.apple-laurel-wreath-standalone .apple-laurel-branch {
+  width: 36px;
+  height: 68px;
 }
 .scroll-cue {
   display: flex;
@@ -1087,15 +1168,23 @@ section[id] {
 .award-list article + article {
   border-top: 1px solid #ffffff26;
 }
-.award-list svg {
-  width: 76px;
-  height: 90px;
-  color: var(--gold);
+.award-list .apple-laurel-wreath-standalone {
+  display: inline-flex;
+  align-items: center;
+  color: #ffffff;
   flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+}
+.award-list .apple-laurel-wreath-standalone .apple-laurel-branch {
+  width: 44px;
+  height: 84px;
+  color: #ffffff;
 }
 .award-list article span {
-  font-size: 14px;
-  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.75);
 }
 .award-list h3 {
   font-size: clamp(24px, 2.3vw, 32px);
@@ -1671,25 +1760,27 @@ section[id] {
   .hero-bottom {
     bottom: 38px;
   }
-  .hero-awards {
-    gap: 15px;
-    width: 100%;
-    align-items: flex-start;
+  .hero-awards-apple {
+    gap: 16px;
+    padding: 10px 18px;
+    border-radius: 18px;
   }
-  .award-lockup {
-    flex-direction: column;
-    gap: 4px;
-    align-items: flex-start;
+  .apple-award-badge {
+    padding: 4px 8px;
+    gap: 6px;
+  }
+  .apple-laurel-branch {
+    width: 34px;
+    height: 62px;
+  }
+  .apple-award-org {
     font-size: 10px;
-    line-height: 1.7;
-    flex: 1;
   }
-  .award-lockup > svg {
-    width: 32px;
-    height: 37px;
+  .apple-award-title {
+    font-size: 11.5px;
   }
   .award-divider {
-    height: 75px;
+    height: 40px;
   }
   .hero-image-note {
     font-size: 8px;
@@ -1923,23 +2014,29 @@ section[id] {
   .intro-loader {
     height: 250px;
   }
-  .hero-awards {
+  .hero-awards-apple {
     flex-direction: column;
-    gap: 17px;
+    gap: 10px;
+    padding: 10px 16px;
+    width: 100%;
+    max-width: 380px;
   }
-  .award-divider {
+  .hero-awards .award-divider {
     display: none;
   }
-  .award-lockup {
-    flex-direction: row;
-    gap: 13px;
-    align-items: center;
-    font-size: 12px;
-    flex: initial;
+  .apple-award-badge {
+    width: 100%;
+    justify-content: center;
   }
-  .award-lockup > svg {
-    width: 38px;
-    height: 43px;
+  .apple-laurel-branch {
+    width: 32px;
+    height: 58px;
+  }
+  .apple-award-org {
+    font-size: 10px;
+  }
+  .apple-award-title {
+    font-size: 11.5px;
   }
   .hero-bottom {
     bottom: 37px;
@@ -2690,8 +2787,8 @@ section[id] {
 .specs-support-callout {
   margin-top: auto;
   background: #f0f4fa;
-  border-left: 3px solid var(--primary);
-  border-radius: 4px;
+  border: 1px solid #d0dfef;
+  border-radius: 10px;
   padding: 18px 20px;
   display: flex;
   gap: 14px;
