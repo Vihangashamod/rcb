@@ -363,7 +363,7 @@ section[id] {
 }
 .hero-content {
   position: relative;
-  padding: clamp(70px, 10vh, 120px) 5.6vw 150px;
+  padding: clamp(120px, 16vh, 175px) 5.6vw 140px;
   max-width: 920px;
   animation: hero-enter 1s var(--ease) both;
 }
@@ -1506,7 +1506,7 @@ section[id] {
     font-size: 76px;
   }
   .hero-content {
-    padding-top: 100px;
+    padding-top: 125px;
   }
   .machine-image {
     height: 300px;
@@ -1540,7 +1540,7 @@ section[id] {
     max-height: none;
   }
   .hero-content {
-    padding: 85px 24px 0;
+    padding: 105px 24px 0;
     max-width: 650px;
   }
   .hero h1 {
@@ -1737,7 +1737,7 @@ section[id] {
     height: 720px;
   }
   .hero-content {
-    padding-top: 68px;
+    padding-top: 88px;
   }
   .hero h1 {
     font-size: 54px;
