@@ -3,11 +3,13 @@ import { ArrowUpRight, Phone, MoveRight } from "lucide-react";
 import { Brand } from "@/components/brand";
 import { Separator } from "@/components/ui/separator";
 import { SocialLinks } from "@/components/contact";
+import { PartnersSection } from "@/components/partners";
 import { site } from "@/lib/site";
 
 export function Footer() {
   return (
     <>
+      <PartnersSection />
       <footer className="site-footer">
         <div className="footer-main">
           <div className="footer-brand">
