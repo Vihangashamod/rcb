@@ -5,6 +5,7 @@ import { ArrowLeft, MessageCircle, Phone, ArrowUpRight, ShieldCheck, Wrench, Clo
 import { Header } from "@/components/header";
 import { ProductCatalog } from "@/components/products/product-catalog";
 import { WhatsApp } from "@/components/social-icons";
+import { InteractiveHoverButton } from "@/components/ui/button";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -84,17 +85,18 @@ export default async function ProductsPage(props: {
               </p>
             </div>
             <div className="inquiry-banner-actions">
-              <a
+              <InteractiveHoverButton
                 href={`https://wa.me/94771600600?text=${encodeURIComponent(
                   "Hello RCB Holdings, I would like to consult with your machinery team regarding equipment options and availability."
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp-large"
+                variant="whatsapp"
+                size="lg"
+                icon={<WhatsApp size={20} />}
               >
-                <WhatsApp size={22} />
-                <span>Inquire on WhatsApp</span>
-              </a>
+                Inquire on WhatsApp
+              </InteractiveHoverButton>
               <a href={site.phoneHref} className="btn-phone-secondary">
                 <Phone size={19} />
                 <span>Call {site.phone}</span>

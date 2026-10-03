@@ -2944,3 +2944,192 @@ section[id] {
   }
 }
 
+/* ====================================================
+   INTERACTIVE HOVER BUTTON (GLOBAL MAGIC UI STYLES)
+   ==================================================== */
+.ihb-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  isolation: isolate;
+  border: 1px solid transparent;
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ihb-btn:active {
+  transform: scale(0.98);
+}
+
+/* SIZES */
+.ihb-btn.ihb-sm {
+  height: 36px;
+  padding: 0 16px;
+  font-size: 12.5px;
+}
+.ihb-btn.ihb-default {
+  height: 44px;
+  padding: 0 24px;
+  font-size: 14px;
+}
+.ihb-btn.ihb-lg {
+  height: 52px;
+  padding: 0 30px;
+  font-size: 15.5px;
+}
+
+/* INNER LAYOUT */
+.ihb-default-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+.ihb-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center center;
+  will-change: transform;
+}
+.ihb-hover-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateX(-14px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* HOVER TRIGGERS */
+.ihb-btn:hover .ihb-dot,
+.ihb-btn:focus-visible .ihb-dot {
+  transform: scale(85);
+}
+.ihb-btn:hover .ihb-default-content,
+.ihb-btn:focus-visible .ihb-default-content {
+  transform: translateX(18px);
+  opacity: 0;
+}
+.ihb-btn:hover .ihb-hover-content,
+.ihb-btn:focus-visible .ihb-hover-content {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* THEME VARIANTS */
+/* 1. Primary / Light (Crisp white with #002663 expanding fill) */
+.ihb-primary {
+  background: #ffffff;
+  color: #002663;
+  border-color: #dbe1e9;
+  box-shadow: 0 2px 8px rgba(0, 38, 99, 0.08);
+}
+.ihb-primary .ihb-dot {
+  background: #002663;
+}
+.ihb-primary .ihb-hover-content {
+  color: #ffffff;
+}
+.ihb-primary:hover {
+  border-color: #002663;
+  box-shadow: 0 6px 20px rgba(0, 38, 99, 0.22);
+}
+
+/* 2. Hero Primary (Solid white on dark hero, fills with #002663) */
+.ihb-hero-primary {
+  background: #ffffff;
+  color: #002663;
+  border-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+.ihb-hero-primary .ihb-dot {
+  background: #002663;
+}
+.ihb-hero-primary .ihb-hover-content {
+  color: #ffffff;
+}
+.ihb-hero-primary:hover {
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+}
+
+/* 3. Hero Outline (Frosted glass on dark hero, fills with white) */
+.ihb-hero-outline {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.ihb-hero-outline .ihb-dot {
+  background: #ffffff;
+}
+.ihb-hero-outline .ihb-hover-content {
+  color: #002663;
+}
+.ihb-hero-outline:hover {
+  border-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 4. WhatsApp (WhatsApp green #25D366 ripple) */
+.ihb-whatsapp {
+  background: #ffffff;
+  color: #128c46;
+  border-color: #a7f3d0;
+  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.15);
+}
+.ihb-whatsapp .ihb-dot {
+  background: #25D366;
+}
+.ihb-whatsapp .ihb-hover-content {
+  color: #ffffff;
+}
+.ihb-whatsapp:hover {
+  border-color: #25D366;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+/* 5. Solid Primary (Navy fill with white ripple) */
+.ihb-solid-primary {
+  background: #002663;
+  color: #ffffff;
+  border-color: #002663;
+}
+.ihb-solid-primary .ihb-dot {
+  background: #ffffff;
+}
+.ihb-solid-primary .ihb-hover-content {
+  color: #002663;
+}
+.ihb-solid-primary:hover {
+  box-shadow: 0 6px 22px rgba(0, 38, 99, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ihb-dot {
+    display: none;
+  }
+  .ihb-default-content {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .ihb-hover-content {
+    display: none !important;
+  }
+}
+

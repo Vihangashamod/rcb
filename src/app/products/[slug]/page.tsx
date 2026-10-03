@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/header";
 import { WhatsApp } from "@/components/social-icons";
+import { InteractiveHoverButton } from "@/components/ui/button";
 import {
   products,
   getProductBySlug,
@@ -157,16 +158,18 @@ export default async function ProductDetailPage(props: {
                 </div>
 
                 <div className="inquiry-box-actions">
-                  <a
+                  <InteractiveHoverButton
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-whatsapp-primary"
                     aria-label={`Inquire about ${product.name} on WhatsApp`}
+                    variant="whatsapp"
+                    size="lg"
+                    icon={<WhatsApp size={20} />}
+                    className="w-full"
                   >
-                    <WhatsApp size={22} />
-                    <span>Inquire in WhatsApp</span>
-                  </a>
+                    Inquire in WhatsApp
+                  </InteractiveHoverButton>
 
                   <a
                     href={site.phoneHref}

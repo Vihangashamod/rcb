@@ -7,7 +7,7 @@ import {
   Wrench,
   Layers,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { InteractiveHoverButton } from "@/components/ui/button";
 import {
   Accordion,
   AccordionItem,
@@ -57,16 +57,20 @@ export default function Home() {
               Your next project starts here.
             </p>
             <div className="hero-actions">
-              <Button asChild variant="secondary" size="lg">
-                <a href="#paving">
-                  Explore paving <ArrowUpRight data-icon="inline-end" />
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <a href="#machinery">
-                  Discover machinery <ArrowUpRight data-icon="inline-end" />
-                </a>
-              </Button>
+              <InteractiveHoverButton
+                href="#paving"
+                variant="hero-primary"
+                size="lg"
+              >
+                Explore paving
+              </InteractiveHoverButton>
+              <InteractiveHoverButton
+                href="#machinery"
+                variant="hero-outline"
+                size="lg"
+              >
+                Discover machinery
+              </InteractiveHoverButton>
             </div>
           </div>
           <div className="hero-bottom">
