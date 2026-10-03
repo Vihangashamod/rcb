@@ -56,9 +56,10 @@ export const InteractiveHoverButton = React.forwardRef<
     const sizeClass =
       size === "sm" ? "ihb-sm" : size === "lg" ? "ihb-lg" : "ihb-default";
 
-    const defaultIcon = icon || <ArrowUpRight className="size-4 shrink-0" />;
+    const renderIcon =
+      icon !== undefined ? icon : <ArrowUpRight className="ihb-icon-svg" />;
 
-    // Extract label text if children is a string or provided via text prop
+    // Extract label text
     let labelContent: React.ReactNode = text;
     if (!labelContent && typeof children === "string") {
       labelContent = children;
@@ -75,11 +76,10 @@ export const InteractiveHoverButton = React.forwardRef<
 
     const inner = (
       <>
-        <span className="ihb-dot" aria-hidden="true" />
-        <span className="ihb-default-content">{labelContent}</span>
-        <span className="ihb-hover-content" aria-hidden="true">
-          <span>{labelContent}</span>
-          {defaultIcon}
+        <span className="ihb-ripple" aria-hidden="true" />
+        <span className="ihb-inner">
+          <span className="ihb-text">{labelContent}</span>
+          {renderIcon && <span className="ihb-icon-slot">{renderIcon}</span>}
         </span>
       </>
     );

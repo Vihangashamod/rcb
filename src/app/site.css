@@ -2955,93 +2955,110 @@ section[id] {
   white-space: nowrap;
   isolation: isolate;
   border: 1px solid transparent;
-  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ihb-btn:hover {
+  transform: translateY(-2px);
 }
 .ihb-btn:active {
-  transform: scale(0.98);
+  transform: translateY(0) scale(0.98);
 }
 
 /* SIZES */
 .ihb-btn.ihb-sm {
-  height: 36px;
-  padding: 0 16px;
-  font-size: 12.5px;
+  height: 38px;
+  padding: 0 18px;
+  font-size: 13px;
 }
 .ihb-btn.ihb-default {
-  height: 44px;
+  height: 46px;
   padding: 0 24px;
-  font-size: 14px;
+  font-size: 14.5px;
 }
 .ihb-btn.ihb-lg {
   height: 52px;
-  padding: 0 30px;
+  padding: 0 28px;
   font-size: 15.5px;
 }
 
-/* INNER LAYOUT */
-.ihb-default-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
-}
-.ihb-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  transform-origin: center center;
-  will-change: transform;
-}
-.ihb-hover-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  opacity: 0;
-  transform: translateX(-14px);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
-  pointer-events: none;
+/* INNER LAYOUT (CENTERED, CLEAN, NO RESTING DOT) */
+.ihb-inner {
+  position: relative;
   z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ihb-text {
+  display: inline-block;
+  line-height: 1;
+}
+.ihb-icon-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ihb-icon-slot svg,
+.ihb-icon-svg {
+  width: 17px;
+  height: 17px;
+  display: block;
 }
 
-/* HOVER TRIGGERS */
-.ihb-btn:hover .ihb-dot,
-.ihb-btn:focus-visible .ihb-dot {
-  transform: scale(85);
+/* HOVER MICRO-INTERACTIONS */
+.ihb-btn:hover .ihb-icon-slot {
+  transform: translate(2.5px, -2.5px);
 }
-.ihb-btn:hover .ihb-default-content,
-.ihb-btn:focus-visible .ihb-default-content {
-  transform: translateX(18px);
+
+/* RIPPLE EXPANSION (INVISIBLE IN RESTING STATE) */
+.ihb-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -12px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  transform: scale(0);
   opacity: 0;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  will-change: transform, opacity;
 }
-.ihb-btn:hover .ihb-hover-content,
-.ihb-btn:focus-visible .ihb-hover-content {
-  transform: translateX(0);
+.ihb-btn:hover .ihb-ripple,
+.ihb-btn:focus-visible .ihb-ripple {
+  transform: scale(32);
   opacity: 1;
 }
 
 /* THEME VARIANTS */
-/* 1. Primary / Light (Crisp white with #002663 expanding fill) */
+
+/* 1. Primary / Light (Crisp white surface with #002663 ripple fill) */
 .ihb-primary {
   background: #ffffff;
   color: #002663;
   border-color: #dbe1e9;
   box-shadow: 0 2px 8px rgba(0, 38, 99, 0.08);
 }
-.ihb-primary .ihb-dot {
+.ihb-primary .ihb-ripple {
   background: #002663;
-}
-.ihb-primary .ihb-hover-content {
-  color: #ffffff;
 }
 .ihb-primary:hover {
   border-color: #002663;
-  box-shadow: 0 6px 20px rgba(0, 38, 99, 0.22);
+  box-shadow: 0 8px 24px rgba(0, 38, 99, 0.24);
+}
+.ihb-primary:hover .ihb-inner {
+  color: #ffffff;
 }
 
 /* 2. Hero Primary (Solid white on dark hero, fills with #002663) */
@@ -3049,81 +3066,81 @@ section[id] {
   background: #ffffff;
   color: #002663;
   border-color: #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
-.ihb-hero-primary .ihb-dot {
+.ihb-hero-primary .ihb-ripple {
   background: #002663;
 }
-.ihb-hero-primary .ihb-hover-content {
-  color: #ffffff;
-}
 .ihb-hero-primary:hover {
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38);
+}
+.ihb-hero-primary:hover .ihb-inner {
+  color: #ffffff;
 }
 
 /* 3. Hero Outline (Frosted glass on dark hero, fills with white) */
 .ihb-hero-outline {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.42);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 }
-.ihb-hero-outline .ihb-dot {
+.ihb-hero-outline .ihb-ripple {
   background: #ffffff;
-}
-.ihb-hero-outline .ihb-hover-content {
-  color: #002663;
 }
 .ihb-hero-outline:hover {
   border-color: #ffffff;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 28px rgba(255, 255, 255, 0.22);
+}
+.ihb-hero-outline:hover .ihb-inner {
+  color: #002663;
 }
 
-/* 4. WhatsApp (WhatsApp green #25D366 ripple) */
+/* 4. WhatsApp (Crisp white with official #25D366 ripple) */
 .ihb-whatsapp {
   background: #ffffff;
   color: #128c46;
   border-color: #a7f3d0;
-  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.15);
+  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.16);
 }
-.ihb-whatsapp .ihb-dot {
+.ihb-whatsapp .ihb-ripple {
   background: #25D366;
-}
-.ihb-whatsapp .ihb-hover-content {
-  color: #ffffff;
 }
 .ihb-whatsapp:hover {
   border-color: #25D366;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.36);
+}
+.ihb-whatsapp:hover .ihb-inner {
+  color: #ffffff;
 }
 
-/* 5. Solid Primary (Navy fill with white ripple) */
+/* 5. Solid Primary (Navy pill with white ripple) */
 .ihb-solid-primary {
   background: #002663;
   color: #ffffff;
   border-color: #002663;
 }
-.ihb-solid-primary .ihb-dot {
+.ihb-solid-primary .ihb-ripple {
   background: #ffffff;
 }
-.ihb-solid-primary .ihb-hover-content {
-  color: #002663;
-}
 .ihb-solid-primary:hover {
-  box-shadow: 0 6px 22px rgba(0, 38, 99, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 38, 99, 0.32);
+}
+.ihb-solid-primary:hover .ihb-inner {
+  color: #002663;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ihb-dot {
+  .ihb-ripple {
     display: none;
   }
-  .ihb-default-content {
+  .ihb-btn:hover {
     transform: none !important;
-    opacity: 1 !important;
   }
-  .ihb-hover-content {
-    display: none !important;
+  .ihb-btn:hover .ihb-icon-slot {
+    transform: none !important;
   }
 }
 
