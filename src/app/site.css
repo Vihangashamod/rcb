@@ -1734,10 +1734,12 @@ section[id] {
     font-size: 38px;
   }
   .hero {
-    height: 720px;
+    min-height: 520px;
+    height: calc(100svh - 76px);
+    max-height: 720px;
   }
   .hero-content {
-    padding-top: 88px;
+    padding-top: clamp(48px, 14vw, 76px);
   }
   .hero h1 {
     font-size: 54px;
@@ -1760,34 +1762,79 @@ section[id] {
     min-height: 48px;
   }
   .hero-bottom {
-    bottom: 38px;
+    bottom: clamp(38px, 9vw, 50px);
+    left: 8px;
+    right: 8px;
+    justify-content: center;
   }
   .hero-awards-apple {
-    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(6px, 2vw, 12px);
+    width: 100%;
+    max-width: 440px;
+    margin-inline: auto;
     padding: 0;
     background: transparent;
     border: none;
     box-shadow: none;
   }
   .apple-award-badge {
-    padding: 2px 4px;
-    gap: 6px;
+    display: inline-flex;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 210px;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 2px;
+    gap: clamp(2px, 1vw, 5px);
+  }
+  .apple-award-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+    flex-shrink: 1;
+    padding-inline: 1px;
   }
   .apple-laurel-branch {
-    width: 34px;
-    height: 62px;
+    width: clamp(18px, 4.6vw, 24px);
+    height: clamp(34px, 8.8vw, 46px);
+    flex-shrink: 0;
+  }
+  .apple-award-emblem {
+    width: 10px;
+    height: 10px;
+    margin-bottom: 2px;
   }
   .apple-award-org {
-    font-size: 10px;
+    font-size: clamp(7.5px, 2.1vw, 9.5px);
+    line-height: 1.15;
+    white-space: nowrap;
   }
   .apple-award-title {
-    font-size: 11.5px;
+    font-size: clamp(8.5px, 2.4vw, 11px);
+    line-height: 1.15;
+    white-space: nowrap;
   }
   .award-divider {
-    height: 40px;
+    display: block;
+    height: clamp(24px, 6vw, 34px);
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.28) 20%, rgba(255, 255, 255, 0.28) 80%, transparent);
+    flex-shrink: 0;
   }
   .hero-image-note {
     font-size: 8px;
+    bottom: 8px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0.55;
   }
   .hero-scrim {
     background:
@@ -2020,34 +2067,70 @@ section[id] {
     height: 250px;
   }
   .hero-awards-apple {
-    flex-direction: column;
-    gap: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 2.5vw, 18px);
     padding: 0;
     width: 100%;
-    max-width: 380px;
+    max-width: 500px;
+    margin-inline: auto;
     background: transparent;
     border: none;
     box-shadow: none;
   }
-  .hero-awards .award-divider {
-    display: none;
+  .hero-awards .award-divider,
+  .award-divider {
+    display: block;
+    width: 1px;
+    height: clamp(26px, 6.5vw, 38px);
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.28) 20%, rgba(255, 255, 255, 0.28) 80%, transparent);
+    flex-shrink: 0;
   }
   .apple-award-badge {
-    width: 100%;
+    display: inline-flex;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 240px;
     justify-content: center;
+    align-items: center;
+    gap: clamp(3px, 1.2vw, 6px);
+    padding: 2px 4px;
+  }
+  .apple-award-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+    flex-shrink: 1;
   }
   .apple-laurel-branch {
-    width: 32px;
-    height: 58px;
+    width: clamp(20px, 4.8vw, 30px);
+    height: clamp(36px, 9vw, 56px);
+    flex-shrink: 0;
+  }
+  .apple-award-emblem {
+    width: clamp(10px, 2.6vw, 13px);
+    height: clamp(10px, 2.6vw, 13px);
+    margin-bottom: 2px;
   }
   .apple-award-org {
-    font-size: 10px;
+    font-size: clamp(8px, 2.2vw, 10.5px);
+    line-height: 1.2;
+    white-space: nowrap;
   }
   .apple-award-title {
-    font-size: 11.5px;
+    font-size: clamp(9px, 2.5vw, 12px);
+    line-height: 1.2;
+    white-space: nowrap;
   }
   .hero-bottom {
-    bottom: 37px;
+    bottom: 32px;
+    left: 16px;
+    right: 16px;
+    justify-content: center;
   }
   .intro-products > a {
     padding-block: 20px;
