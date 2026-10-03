@@ -203,9 +203,27 @@ export default function Home() {
         </section>
 
         <div className="word-ribbon" aria-hidden="true">
-          <div>
-            MADE TO BUILD. <span>BUILT TO LAST.</span> MADE TO BUILD.{" "}
-            <span>BUILT TO LAST.</span>
+          <div className="marquee-track">
+            <div className="marquee-content">
+              <span>MADE TO BUILD.</span>
+              <span className="word-accent">BUILT TO LAST.</span>
+              <span>MADE TO BUILD.</span>
+              <span className="word-accent">BUILT TO LAST.</span>
+              <span>MADE TO BUILD.</span>
+              <span className="word-accent">BUILT TO LAST.</span>
+              <span>MADE TO BUILD.</span>
+              <span className="word-accent">BUILT TO LAST.</span>
+            </div>
+            <div className="marquee-content" aria-hidden="true">
+              <span>MADE TO BUILD.</span>
+              <span className="word-accent">BUILT TO LAST.</span>
+              <span>MADE TO BUILD.</span>
+              <span className="word-accent">BUILT TO LAST.</span>
+              <span>MADE TO BUILD.</span>
+              <span className="word-accent">BUILT TO LAST.</span>
+              <span>MADE TO BUILD.</span>
+              <span className="word-accent">BUILT TO LAST.</span>
+            </div>
           </div>
         </div>
         <section id="machinery" className="machinery-section section-pad">
