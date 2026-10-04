@@ -2,13 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
-  ArrowDown,
   Blocks,
-  Truck,
   Wrench,
-  Layers,
 } from "lucide-react";
-import { InteractiveHoverButton } from "@/components/ui/button";
 import {
   Accordion,
   AccordionItem,
@@ -16,8 +12,10 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { Header } from "@/components/header";
-import { Awards, Laurel, AppleAwardBadge } from "@/components/brand";
+import { Awards, AppleAwardBadge } from "@/components/brand";
 import { ScrollMotion } from "@/components/motion";
+import { PavingHero } from "@/components/paving-hero";
+import { SolutionHighlights } from "@/components/solution-highlights";
 import { Calculator } from "@/components/calculator";
 import { Comparison } from "@/components/comparison";
 import { Gallery } from "@/components/gallery";
@@ -25,118 +23,20 @@ import { Contact } from "@/components/contact";
 import { pavers } from "@/lib/calculator";
 import { site } from "@/lib/site";
 
-const contract =
-  "THESIS: Make paving desirable and machinery approachable. OWN-WORLD: Concept B, cinematic tropical paving, deep RCB blue, Google Sans Flex, quiet gold awards. STORY: See the space, choose a solution, estimate, explore real RCB images, enquire. FIRST VIEWPORT: White navigation, immersive photo, large left headline and two actions, award band. FORM: Seed c9404b5c; user-approved concept B. Responsive semantic content, restrained scroll parallax and image expansion, accessible shadcn controls.";
 export default function Home() {
   return (
     <>
-      <div dangerouslySetInnerHTML={{ __html: `<!-- ${contract} -->` }} />
       <Header />
       <ScrollMotion />
       <main id="main">
-        <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-image">
-            <Image
-              src="/paving-after.webp"
-              alt="Architectural inspiration: a tropical courtyard finished with interlock paving"
-              fill
-              priority
-              sizes="100vw"
-              quality={85}
-            />
-          </div>
-          <div className="hero-scrim" />
-          <div className="hero-content">
-            <h1 id="hero-title">
-              Build something
-              <br />
-              that lasts.
-            </h1>
-            <p>
-              Interlock paving. Powerful machinery.
-              <br />
-              Your next project starts here.
-            </p>
-            <div className="hero-actions">
-              <InteractiveHoverButton
-                href="#paving"
-                variant="hero-primary"
-                size="lg"
-              >
-                Explore paving
-              </InteractiveHoverButton>
-              <InteractiveHoverButton
-                href="#machinery"
-                variant="hero-outline"
-                size="lg"
-              >
-                Discover machinery
-              </InteractiveHoverButton>
-            </div>
-          </div>
-          <div className="hero-bottom">
-            <Awards />
-            <a className="scroll-cue" href="#solutions">
-              <span>Discover what’s possible</span>
-              <ArrowDown size={20} />
-            </a>
-          </div>
-          <span className="hero-image-note">
-            Paving inspiration · illustrative scene
-          </span>
-        </section>
+        <PavingHero />
+        <div className="recognition-band">
+          <p>Built with care.<br /><strong>Recognised along the way.</strong></p>
+          <Awards />
+          <Link className="text-link" href="/about#achievements">Our story <ArrowUpRight size={17} /></Link>
+        </div>
 
-        <section id="solutions" className="intro-section section-pad">
-          <div className="intro-copy" data-reveal>
-            <h2>
-              From the first block.
-              <br />
-              To the final finish.
-            </h2>
-            <p>
-              Some projects start with a sketch. Others with a patch of earth.
-              Wherever yours begins, find the paving, blocks and machinery to
-              move it forward with RCB Holdings.
-            </p>
-            <Link className="text-link" href="/about">
-              Get to know RCB <ArrowUpRight size={18} />
-            </Link>
-          </div>
-          <div className="intro-products" data-reveal>
-            <div className="intro-loader">
-              <Image
-                src="/wheel-loader.jpg"
-                alt="SDLG wheel loader from the RCB machinery collection"
-                fill
-                sizes="(max-width: 800px) 90vw, 40vw"
-              />
-            </div>
-            <a href="#paving">
-              <Blocks />
-              <div>
-                <strong>Interlock & paving</strong>
-                <span>Bring your outdoor space together</span>
-              </div>
-              <ArrowUpRight />
-            </a>
-            <a href="#machinery">
-              <Truck />
-              <div>
-                <strong>Construction machinery</strong>
-                <span>Find the machine for the job</span>
-              </div>
-              <ArrowUpRight />
-            </a>
-            <a href="#calculator">
-              <Layers />
-              <div>
-                <strong>Plan your project</strong>
-                <span>Calculate your paving quantity</span>
-              </div>
-              <ArrowUpRight />
-            </a>
-          </div>
-        </section>
+        <SolutionHighlights />
 
         <section id="paving" className="paving-section section-pad">
           <div className="section-heading" data-reveal>
@@ -207,30 +107,15 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="word-ribbon" aria-hidden="true">
-          <div className="marquee-track">
-            <div className="marquee-content">
-              <span>MADE TO BUILD.</span>
-              <span className="word-accent">BUILT TO LAST.</span>
-              <span>MADE TO BUILD.</span>
-              <span className="word-accent">BUILT TO LAST.</span>
-              <span>MADE TO BUILD.</span>
-              <span className="word-accent">BUILT TO LAST.</span>
-              <span>MADE TO BUILD.</span>
-              <span className="word-accent">BUILT TO LAST.</span>
-            </div>
-            <div className="marquee-content" aria-hidden="true">
-              <span>MADE TO BUILD.</span>
-              <span className="word-accent">BUILT TO LAST.</span>
-              <span>MADE TO BUILD.</span>
-              <span className="word-accent">BUILT TO LAST.</span>
-              <span>MADE TO BUILD.</span>
-              <span className="word-accent">BUILT TO LAST.</span>
-              <span>MADE TO BUILD.</span>
-              <span className="word-accent">BUILT TO LAST.</span>
-            </div>
+        <section className="build-statement" aria-label="Made to build. Built to last." data-scroll-statement>
+          <div className="build-statement-pin">
+            <p className="build-statement-type" aria-hidden="true">
+              <span className="statement-line">Made to build.<span>Made to build.</span></span>
+              <span className="statement-line">Built to last.<span>Built to last.</span></span>
+            </p>
+            <a href="#machinery" className="statement-link">Meet your machines <ArrowUpRight size={20} /></a>
           </div>
-        </div>
+        </section>
         <section id="machinery" className="machinery-section section-pad">
           <div className="section-heading" data-reveal>
             <h2>

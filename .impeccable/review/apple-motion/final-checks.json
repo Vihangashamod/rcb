@@ -1,0 +1,85 @@
+[
+  {
+    "name": "Placement chapter readable",
+    "pass": true
+  },
+  {
+    "name": "Mobile section navigation",
+    "pass": true,
+    "top": 120.4375
+  },
+  {
+    "name": "Finish completes paving",
+    "pass": true
+  },
+  {
+    "name": "Keyboard focus restores faded hero actions",
+    "pass": true
+  },
+  {
+    "name": "Still-scene control",
+    "pass": true
+  },
+  {
+    "name": "mobile: third gallery item",
+    "pass": true
+  },
+  {
+    "name": "mobile: image/text separation",
+    "pass": true
+  },
+  {
+    "name": "Reversing scroll resets paving",
+    "pass": true
+  },
+  {
+    "name": "mobile: gallery keyboard Home",
+    "pass": true
+  },
+  {
+    "name": "mobile: no overflow",
+    "pass": true
+  },
+  {
+    "name": "mobile: no runtime errors",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "desktop: third gallery item",
+    "pass": true
+  },
+  {
+    "name": "desktop: image/text separation",
+    "pass": true
+  },
+  {
+    "name": "desktop: gallery keyboard Home",
+    "pass": true
+  },
+  {
+    "name": "desktop: no overflow",
+    "pass": true
+  },
+  {
+    "name": "desktop: no runtime errors",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "Live reduced motion disables sticky scene",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion keeps heading visible",
+    "pass": true
+  },
+  {
+    "name": "No-JavaScript photo and solutions fallback",
+    "pass": true
+  },
+  {
+    "name": "Canvas asset failure keeps static photo and natural scrolling",
+    "pass": true
+  }
+]

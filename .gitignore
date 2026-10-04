@@ -8,3 +8,5 @@ work/
 .DS_Store
 Thumbs.db
 
+# Local browser captures; retain JSON review reports in Git.
+.impeccable/review/**/*.png

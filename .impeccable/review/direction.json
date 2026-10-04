@@ -1,0 +1,14 @@
+{
+  "mode": "Persuade",
+  "scope": "Extend the repository's established RCB home page and hero, preserving its brand and business content",
+  "user_request": "Make the site futuristic but light on the AI-built look; hero with a man paving interlocks, mouse interactions and scroll-interactive paving. Use Vihangashamod/rcb as the replacement base and move it to Desktop/Companies/INFIAX(PVT)LTD/RCB-Holdings.",
+  "base_commit": "d2d8fe3",
+  "build_path": "code-led extension, no new visual-world selection",
+  "THESIS": "Make the craft of interlock paving tangible through a photographic scene that builds with scrolling.",
+  "OWN-WORLD": "Preserve RCB #002663, local Google Sans Flex, white navigation and sections. Extend the photographic hero with deep #082439 shade and #e9d2a8 concrete/sand accents. No neon, fabricated statistics or technical decoration.",
+  "STORY": "Watch the groundwork, explore paving and machinery, estimate a project, see the existing gallery and enquire.",
+  "FIRST VIEWPORT": "A clearly visible male craftsman laying an interlock, large white and sand headline, primary paving action and machinery link. Scroll progressively lays the photographed ground; pointer gently moves the scene. On mobile, copy sits above an unobstructed photographic scene.",
+  "FORM": "Extend the incumbent selected Concept B (historical seed c9404b5c recorded by the repository). Client canvas, semantic photographic fallback, event-driven requestAnimationFrame, fine-pointer gating, mobile ordinary scrolling, reduced motion and explicit motion pause. Preserve confirmed awards in a light band below the hero.",
+  "known_context_drift": "Upstream DESIGN.md still describes pending concepts even though implementation and README identify selected Concept B. This predates the work; no unrequested context repair.",
+  "quality_bar": "Tactile documentary imagery, strong reading hierarchy, precise alignment, purposeful interaction; business content and controls remain usable without canvas or with reduced motion."
+}

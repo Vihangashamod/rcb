@@ -1,0 +1,137 @@
+{
+  "surface": "/",
+  "scope": "Apple-inspired motion extension of the established RCB Concept B photographic home page; observed surface details below do not replace the global design system.",
+  "direction": ".impeccable/review/apple-motion/direction.json",
+  "base_commit": "d2d8fe3",
+  "tokens": {
+    "source_order": [
+      "src/app/globals.css",
+      "src/app/site.css",
+      "src/app/craft.css"
+    ],
+    "colors": {
+      "--primary": "#002663",
+      "--ink": "#002663",
+      "--background": "#fff",
+      "--muted-foreground": "#536176",
+      "--craft-night": "#082439",
+      "--craft-paper": "#f5f4f0",
+      "--craft-sand": "#e9d2a8"
+    },
+    "type": {
+      "family": "Self-hosted Google Sans Flex, sans-serif",
+      "variable": "--font-google",
+      "available_weights": "400 800",
+      "hero_heading": {
+        "size": "clamp(56px, 6.65vw, 96px)",
+        "weight": 600,
+        "line_height": 1.035,
+        "letter_spacing": "-.04em"
+      },
+      "hero_body": {
+        "size": "clamp(16px, 1.45vw, 20px)",
+        "line_height": 1.65,
+        "max_width": "410px"
+      },
+      "placement_heading": {
+        "size": "clamp(48px, 6vw, 86px)",
+        "weight": 600,
+        "line_height": 1.06,
+        "letter_spacing": "-.035em"
+      },
+      "highlights_heading": {
+        "size": "clamp(36px, 4.4vw, 64px)",
+        "weight": 650,
+        "line_height": 1.08
+      },
+      "highlight_card_heading": {
+        "size": "clamp(28px, 2.5vw, 38px)",
+        "weight": 600,
+        "line_height": 1.08
+      },
+      "statement": {
+        "size": "clamp(52px, 7.5vw, 96px)",
+        "weight": 600,
+        "line_height": 1.08,
+        "letter_spacing": "-.035em"
+      }
+    },
+    "hero_inset": "max(5.6vw, 24px)",
+    "hero_button": {
+      "radius": "5px",
+      "min_height": "54px",
+      "padding_inline": "24px",
+      "background": "var(--craft-sand)",
+      "foreground": "#082439"
+    },
+    "motion_control": {
+      "size": "44px",
+      "radius": "50%"
+    },
+    "ease": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "highlight_card": {
+      "radius": "16px",
+      "width": "clamp(480px, 52vw, 700px)",
+      "height": "clamp(430px, 39vw, 540px)",
+      "gap": "24px",
+      "copy_padding": "38px"
+    }
+  },
+  "responsive": {
+    "desktop": "With canvas ready, width >=801px, height >=601px and no reduced-motion preference, the hero is 225svh and the scene pins 72px below the viewport top. The scene height is calc(100svh - 72px), minimum 570px, with no maximum. Otherwise the hero remains in ordinary document flow. Opening copy occupies 61%; image is cover at 50% 52%.",
+    "801_to_1100px": "Opening copy expands to 64% with a 6.5vw heading and 90px top padding; awards-band introduction hides. Chapter gaps narrow to 18px. Highlights heading is 4.2vw.",
+    "max_800px": "Hero uses ordinary document scrolling. Copy sits above a scene beginning at 265px; hero minimum height is 870px and image position is 66% 52%. Heading is clamp(45px, 8.5vw, 68px); buttons are at least 48px high. Calculator link, second-act copy and chapter controls hide. The still-scene control sits left: 0 and bottom: 72px within the bottom strip, on a solid craft-night background. Highlights use 84vw-wide, 460px-high cards with 16px gaps; their heading stacks above supporting copy. The statement is static, minimum 410px high.",
+    "501_to_800px": "Hero minimum height is 960px; scene begins at 280px.",
+    "max_374px": "Hero copy inset becomes 20px, heading 40px and action spacing tightens. Highlight cards become 420px high with 24px copy padding and 28px headings.",
+    "short_desktop": "At height <=720px and width >=801px, hero copy top padding becomes 55px; heading is clamp(52px, 6vw, 82px). At height <=600px, the hero and statement use ordinary scrolling; second-act copy and chapter controls hide, and opening copy stays visible.",
+    "min_1600px": "Copy top padding becomes 16svh.",
+    "awards": "Confirmed awards follow the hero on craft-paper; supporting copy and award-page link hide at <=800px.",
+    "statement": "With JavaScript, width >=801px, height >=601px and no reduced-motion preference, the statement is 155svh with a scene pinned at 72px and height calc(100svh - 72px). Static desktop presentation has a 580px minimum height."
+  },
+  "interaction": {
+    "paving": "Canvas blends matched photographs through 7 rows by 11 columns of clipped fragments; progress begins at 0.04 and reaches 1 as scrolling lays the paving. Cubic easing lowers each fragment by up to 22px. Desktop sticky travel and mobile ordinary scroll use separate progress distances; reversing scroll reverses the reveal.",
+    "pointer": "Fine hover pointers gently translate the scene up to +/-7px horizontally and +/-4px vertically. An eligible revealed ground fragment receives a local sand-colored outline. Product photos and paver samples share fine-pointer hover response.",
+    "pause": "The keyboard-operable Show still scene button exposes aria-pressed. It shows completed paving, restores opening copy, settles pointer response and hides chapter controls; Enable hero motion resumes the sequence. It controls hero motion only and retains the desktop hero scroll distance.",
+    "reduced_motion": "Shows completed paving, removes sticky hero travel and scene transforms, hides chapter and motion controls, and uses a still-scene scroll instruction. Highlights remain browsable with instant control scrolling; the statement is static and fully colored. Media-query changes are handled live.",
+    "runtime": "Event-driven requestAnimationFrame settles between input changes, canvas pixel ratio is capped at 1.5, IntersectionObserver stops offscreen animation, and visibilitychange cancels a scheduled frame when the document hides.",
+    "fallback": "A preloaded semantic Next Image of the completed scene remains underneath the aria-hidden canvas. Canvas becomes visible only after both source images decode and painting succeeds. Absent JavaScript, unavailable 2D context or decode failure leaves the image, opening text and links available without added sticky travel; chapter and motion tools are hidden until ready.",
+    "chapters": "Groundwork, Placement and Finish buttons scroll to 0, 0.62 and 0.96 of hero travel with a measured header offset. The active chapter exposes aria-current=step. Opening copy fades across story progress 0.19–0.38 and rises 32px; placement copy enters over 0.38–0.50 from 26px below. The scene pulls back from scale 1.07 to 1. Keyboard focus within opening actions restores their copy and hides overlapping placement text.",
+    "highlights": "Three linked cards use native horizontal scrolling and CSS scroll snapping. JavaScript adds previous/next buttons with disabled endpoints and a polite current-item announcement. When the track itself is focused, Left/Right and Home/End browse cards. No automatic advance; cards and links remain present without JavaScript.",
+    "statement": "Made to build. Built to last. replaces the continuous text ribbon. Eligible desktop scrolling progressively colors the first line white over progress 0–0.45 and the second line sand over 0.4–0.9. The duplicate visual text is aria-hidden; the section has the full accessible label and a machinery link. IntersectionObserver and requestAnimationFrame schedule updates while visible."
+  },
+  "imagery": {
+    "provenance": ".impeccable/asset-provenance.json",
+    "hero": [
+      "public/paving-craftsman.webp",
+      "public/paving-craftsman-base.webp"
+    ],
+    "method": "Built-in image_gen; matched illustrative craftsman and unpaved ground states. Exact prompts and generated source filenames are in the provenance record.",
+    "disclosure": "Visible: Craftsmanship study · illustrative scene. Alt text also describes an illustrative scene. The worker is not represented as an RCB employee and the scene is not an actual RCB project.",
+    "comparison": [
+      "public/paving-after.webp",
+      "public/paving-before.webp"
+    ],
+    "incumbent_business_photos": "Supplied public image library, retained elsewhere on the site.",
+    "extension_assets": "This animation extension creates no new images. Highlights reuse public/paving-after.webp, public/wheel-loader.jpg and public/QT8-15.jpg; the paving card visibly identifies its illustrative design study."
+  },
+  "files": {
+    "src/components/paving-hero.tsx": "Two-act semantic hero, matched-image canvas, scroll/pointer behavior, chapter controls, still-scene control and fallback.",
+    "src/app/craft.css": "Surface tokens, scene layering, chapter and gallery controls, recognition band, typographic statement, responsive and reduced-motion rules.",
+    "src/components/motion.tsx": "Existing section entrances and product pointer response, plus visibility-gated scroll-linked statement coloring.",
+    "src/app/page.tsx": "Home composition: hero, confirmed awards, highlights, paving, typographic handoff and retained business sections.",
+    "src/app/layout.tsx": "Local variable font and stylesheet order.",
+    "src/app/site.css": "Incumbent brand tokens, page components and responsive system.",
+    "src/components/header.tsx": "Existing navigation and section scrolling.",
+    "README.md": "Run, business-content, imagery and verification notes.",
+    "src/components/solution-highlights.tsx": "Three existing-image solution cards with native scroll snapping, previous/next buttons, keyboard navigation and current-item announcement."
+  },
+  "retained_drift": "DESIGN.md still says pending user selection although the incumbent implementation and README identify approved Concept B. This predates the extension; DESIGN.md is preserved and no .impeccable/design.json is introduced.",
+  "verification": {
+    "reports": [
+      ".impeccable/review/apple-motion/browser-results.json",
+      ".impeccable/review/apple-motion/final-checks.json"
+    ],
+    "coverage": "Reported widths 320–1920px, chapter transitions, reverse scrolling, still scene, keyboard focus recovery, highlight controls and keyboard navigation, mobile section navigation, overflow, live reduced motion, no JavaScript and canvas asset failure. These are local browser checks, not production performance measurements.",
+    "final_state": "Production build, typecheck and calculation tests passed as reported by the build owner. All 20 final browser checks passed. Independent finish review disposition: ship, with no material fixes within the animation-extension scope."
+  }
+}

@@ -12,6 +12,20 @@
       "source": "exec-c4dcf28e-878f-40b8-a9c9-982ab65a4cf3.png",
       "purpose": "Illustrative before-paving state",
       "prompt": "Edit the after image only to replace paving with compacted sandy gray-brown earth and gravel. Preserve camera, house, plants, gate, sky and lighting for a matched comparison. No new objects or text."
+    },
+    {
+      "path": "public/paving-craftsman.webp",
+      "purpose": "Illustrative craftsman and finished paving for interactive hero; not an RCB employee or project photo",
+      "method": "built-in image_gen",
+      "prompt": "Create one exceptionally natural editorial architectural photograph, landscape 3:2, for a premium Sri Lankan interlock paving company website. A real-looking adult Sri Lankan male craftsman in his 30s, wearing a faded navy blue short sleeve work shirt, stone-coloured work trousers, work gloves and scuffed boots, kneels on the RIGHT THIRD of the composition and carefully places a single charcoal concrete interlocking rectangular paving block by hand. His face is visible in three-quarter profile as he looks down at his work. Anatomically correct hands and natural working posture. The scene is outdoors at a modern tropical courtyard in warm early morning sunlight. The ground has fine warm sand and partially completed realistic charcoal and warm gray herringbone interlock pavers in the foreground, a small neat stack of blocks beside him. Concrete retaining walls and a few soft out-of-focus palm leaves behind him. Composition: the worker's head at 70% horizontal and 35% vertical, knees at 65% vertical, ground across lower quarter. Left 42% of image is quiet shaded deep slate-blue concrete wall with no subjects or busy foliage, reserved for white headline overlay. Full body with knees and boots in frame, do not crop off worker. Refined documentary photography, tactile aggregate in the blocks, tiny imperfect grains of sand, convincing human skin, restrained warm natural colour, 50mm lens feeling. No artificial glow, no neon, no holograms, no excessive HDR, no blue colour cast on skin, no 3D render aesthetic, no text, no logos, no watermarks. This is an illustrative scene, not a photograph of a claimed real company employee.",
+      "source": "exec-1ee83b05-9443-4f75-a85c-90e112df6c5f.png"
+    },
+    {
+      "path": "public/paving-craftsman-base.webp",
+      "purpose": "Aligned illustrative unpaved state for the scroll-controlled hero",
+      "method": "built-in image_gen",
+      "prompt": "Edit this photograph to make a precisely aligned BEFORE state for a scroll-controlled paving animation. Preserve the image dimensions, camera, every part of the man's body, face, clothes, hands and the single block he is holding, the block stack at right, buildings, walls, foliage, lighting, and shadows exactly. ONLY change the already laid paving on the ground in the bottom 38% of the photograph, especially lower left foreground: replace those installed charcoal concrete pavers with compacted warm gray sandy earth and fine aggregate ready for laying. Keep the ground level, perspective and light consistent. The craftsman is placing the first block on the sand. No additional objects, no text, no branding. This must align as closely as possible with the original so the original paved foreground can be revealed over it.",
+      "source": "exec-12c3872f-09ae-4060-a840-b6eb5fa635fb.png"
     }
   ]
 }

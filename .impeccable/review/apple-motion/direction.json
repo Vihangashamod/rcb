@@ -1,0 +1,22 @@
+{
+  "mode": "Persuade",
+  "scope": "Ordinary motion extension of the established RCB Concept B home page; global design files and asset provenance remain incumbent.",
+  "user_request": "https://www.apple.com/iphone-18-pro/ use this structure for the animations and inspire and make it perfect",
+  "requested_reference": "https://www.apple.com/iphone-18-pro/",
+  "base_commit": "d2d8fe3",
+  "build_path": "code-led extension; no new visual-world selection or generated assets",
+  "THESIS": "Make paving a sequence visitors can follow: groundwork, placement and finish, using Apple-inspired scroll pacing.",
+  "OWN-WORLD": "RCB blue #002663, local Google Sans Flex, white navigation, deep #082439 photography and #e9d2a8 sand retain Concept B.",
+  "STORY": "Watch the paving take shape, browse three solutions, explore materials and machinery, calculate quantities and enquire.",
+  "FIRST VIEWPORT": "Large left-aligned white and sand headline with paving and machinery actions sits over the craftsman photograph; chapter controls run along the bottom. Mobile places copy above the scene.",
+  "FORM": "Extend incumbent Concept B, historical seed c9404b5c: two-act pinned hero, camera pullback, native highlight carousel and scroll-colored typographic handoff. Static fallbacks preserve reading and navigation.",
+  "FINISH": "unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance",
+  "retained_functionality": "Confirmed awards, paving catalogue, machinery, quantity calculator, comparison, gallery, FAQs, enquiry composer and navigation remain available. No pricing or new business claims.",
+  "known_context_drift": "DESIGN.md still says pending user selection although the incumbent implementation and README identify approved Concept B. This predates the extension; global DESIGN.md is preserved and no .impeccable/design.json is introduced.",
+  "surface_record": ".impeccable/surfaces/home.json",
+  "verification_reports": [
+    ".impeccable/review/apple-motion/browser-results.json",
+    ".impeccable/review/apple-motion/final-checks.json"
+  ],
+  "finish_result": "Independent finish review: ship, with no material fixes within the animation-extension scope. All 20 final browser checks and the production build passed. Surface documentation updated; incumbent global design files and raster provenance preserved."
+}

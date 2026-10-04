@@ -109,7 +109,7 @@ export function Header() {
           </nav>
           <div className="nav-actions">
             <Button asChild size="lg" className="desktop-contact">
-              <a href="#contact">
+              <a href="/#contact">
                 Let’s talk <ArrowUpRight data-icon="inline-end" />
               </a>
             </Button>
@@ -160,8 +160,13 @@ export function Header() {
                     <SheetClose asChild key={href}>
                       <a
                         href={href}
-                        onClick={() => {
-                          destination.current = href;
+                        onClick={(event) => {
+                          const target = new URL(event.currentTarget.href);
+                          if (target.pathname === window.location.pathname && target.hash) {
+                            destination.current = target.hash;
+                          } else {
+                            destination.current = null;
+                          }
                         }}
                       >
                         {label}

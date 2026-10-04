@@ -1,0 +1,107 @@
+[
+  {
+    "view": "desktop",
+    "before": {
+      "lay": "0.0400",
+      "opacity": "1.0000",
+      "height": 2250
+    },
+    "mid": {
+      "lay": "0.6836",
+      "opacity": "0.0000",
+      "detail": "0.6462"
+    },
+    "finish": {
+      "lay": "1.0000",
+      "current": "Finish"
+    }
+  },
+  {
+    "view": "mobile",
+    "galleryNext": "2 / 3",
+    "galleryEnd": {
+      "text": "3 / 3",
+      "disabled": true
+    },
+    "galleryHome": "1 / 3",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "view": "desktop",
+    "galleryNext": "2 / 3",
+    "galleryEnd": {
+      "text": "3 / 3",
+      "disabled": true
+    },
+    "galleryHome": "1 / 3",
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "h1": {
+      "x": 24,
+      "y": 119,
+      "width": 720,
+      "height": 135.125
+    }
+  },
+  {
+    "width": 320,
+    "overflow": false,
+    "h1": {
+      "x": 20,
+      "y": 119,
+      "width": 280,
+      "height": 82.78125
+    }
+  },
+  {
+    "width": 1920,
+    "overflow": false,
+    "h1": {
+      "x": 107.515625,
+      "y": 238,
+      "width": 1063.671875,
+      "height": 198.71875
+    }
+  },
+  {
+    "width": 1024,
+    "overflow": false,
+    "h1": {
+      "x": 57.34375,
+      "y": 184,
+      "width": 598.015625,
+      "height": 137.78125
+    }
+  },
+  {
+    "mode": "reduced",
+    "hero": {
+      "x": 0,
+      "y": 94,
+      "width": 1440,
+      "height": 928
+    },
+    "pinPosition": "relative",
+    "h1Opacity": "1",
+    "cards": 3,
+    "motionControlsVisible": false
+  },
+  {
+    "mode": "no-js",
+    "hero": {
+      "x": 0,
+      "y": 94,
+      "width": 1440,
+      "height": 928
+    },
+    "pinPosition": "relative",
+    "h1Opacity": "1",
+    "cards": 3,
+    "motionControlsVisible": false
+  }
+]

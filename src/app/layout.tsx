@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "./site.css";
+import "./craft.css";
 import { Footer } from "@/components/footer";
 
 const googleSans = localFont({
