@@ -16,7 +16,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { Header } from "@/components/header";
-import { Awards, Laurel } from "@/components/brand";
+import { Awards, Laurel, AppleAwardBadge } from "@/components/brand";
 import { ScrollMotion } from "@/components/motion";
 import { Calculator } from "@/components/calculator";
 import { Comparison } from "@/components/comparison";
@@ -370,31 +370,27 @@ export default function Home() {
               />
             </div>
             <div className="award-list">
-              <article>
-                <Laurel />
-                <div>
-                  <span>2013</span>
-                  <h3>
-                    Shramabhimanee
-                    <br />
-                    National Award
-                  </h3>
-                  <p>A milestone of national recognition in our journey.</p>
-                </div>
+              <article className="achievement-card">
+                <AppleAwardBadge
+                  org="Shramabhimanee"
+                  title="National Award · 2013"
+                  size="lg"
+                  className="achievement-award-badge"
+                />
+                <p className="achievement-desc">
+                  A milestone of national recognition in our journey.
+                </p>
               </article>
-              <article>
-                <Laurel />
-                <div>
-                  <span>2016</span>
-                  <h3>
-                    Construction Exhibition
-                    <br />
-                    Co-Sponsor Award
-                  </h3>
-                  <p>
-                    Recognising our participation in the construction community.
-                  </p>
-                </div>
+              <article className="achievement-card">
+                <AppleAwardBadge
+                  org="Construction Exhibition"
+                  title="Co-Sponsor · 2016"
+                  size="lg"
+                  className="achievement-award-badge"
+                />
+                <p className="achievement-desc">
+                  Recognising our participation in the construction community.
+                </p>
               </article>
             </div>
           </div>

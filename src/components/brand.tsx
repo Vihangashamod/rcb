@@ -140,20 +140,18 @@ export function AwardEmblem({ className = "" }: { className?: string }) {
 export function AppleAwardBadge({
   org,
   title,
-  href = "#achievements",
+  href,
   className = "",
+  size = "md",
 }: {
   org: string;
   title: string;
   href?: string;
   className?: string;
+  size?: "md" | "lg";
 }) {
-  return (
-    <a
-      href={href}
-      className={`apple-award-badge ${className}`.trim()}
-      aria-label={`${org} ${title}`}
-    >
+  const content = (
+    <>
       <AppleLaurelBranch side="left" />
       <div className="apple-award-center">
         <AwardEmblem />
@@ -161,7 +159,23 @@ export function AppleAwardBadge({
         <strong className="apple-award-title">{title}</strong>
       </div>
       <AppleLaurelBranch side="right" />
-    </a>
+    </>
+  );
+
+  const classes = `apple-award-badge ${size === "lg" ? "apple-award-badge-lg" : ""} ${className}`.trim();
+
+  if (href) {
+    return (
+      <a href={href} className={classes} aria-label={`${org} ${title}`}>
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <div className={classes} role="img" aria-label={`${org} ${title}`}>
+      {content}
+    </div>
   );
 }
 
@@ -187,11 +201,13 @@ export function Awards() {
       <AppleAwardBadge
         org="Shramabhimanee"
         title="National Award · 2013"
+        href="#achievements"
       />
       <span className="award-divider" aria-hidden="true" />
       <AppleAwardBadge
         org="Construction Exhibition"
         title="Co-Sponsor · 2016"
+        href="#achievements"
       />
     </div>
   );
